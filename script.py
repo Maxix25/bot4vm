@@ -31,6 +31,8 @@ class Bot():
 		self.driver = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"), options=chrome_options)
 		driver = self.driver
 		webhook("Starting VM Bot! 🖥️")
+		error_count = 0
+
 		try:
 			driver.get("https://ide.goorm.io/")
 			time.sleep(3)
@@ -58,7 +60,10 @@ class Bot():
 			except Exception as e:
 				log(f"Encountered error while typing command!\nERROR_MSG={e}")
 				webhook("Encountered error while typing command! Check logs for more info.")
+				error_count+=1
 
+				if error_count > 5:
+					self.mission_abort()
 
 	def run_container(self):
 		driver = self.driver
@@ -68,8 +73,13 @@ class Bot():
 		driver.switch_to.window(driver.window_handles[1])
 
 	def type_cmd(self, command):
+		driver = self.driver
 		terminal = driver.find_element_by_xpath('/html/body/div[3]/div[3]/div[3]/div[1]/div[2]/div')
 		terminal.send_keys(command, Keys.RETURN)
+
+	def mission_abort(self):
+		webhook("Too many errors! All creator's fault... Shutting down...")
+		sys.exit(0)
 
 
 awake = (os.environ.get('AWAKE').lower() == 'true')
