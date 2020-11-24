@@ -57,6 +57,7 @@ class Bot():
 		while True:
 			try:
 				self.type_cmd(os.environ.get('CMD_TO_RUN'))
+				time.sleep(3600)
 			except Exception as e:
 				log(f"Encountered error while typing command!\nERROR_MSG={e}")
 				webhook("Encountered error while typing command! Check logs for more info.")
