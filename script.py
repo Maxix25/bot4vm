@@ -48,7 +48,7 @@ class Bot():
 			log("Bot logged in successfully!")
 
 			self.run_container()
-			time.sleep(60)
+			time.sleep(120)
 
 		except Exception as e:
 			log(f"ERROR_MSG={e}")
@@ -63,6 +63,7 @@ class Bot():
 				error_count+=1
 
 				if error_count > 5:
+					webhook("Too many errors! All creator's fault... Shutting down...")
 					self.mission_abort()
 
 	def run_container(self):
@@ -78,7 +79,6 @@ class Bot():
 		terminal.send_keys(command, Keys.RETURN)
 
 	def mission_abort(self):
-		webhook("Too many errors! All creator's fault... Shutting down...")
 		sys.exit(0)
 
 
