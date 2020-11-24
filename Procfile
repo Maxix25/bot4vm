@@ -1,1 +1,1 @@
-worker: python3 script.py
+web: python3 script.py
