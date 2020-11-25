@@ -31,7 +31,7 @@ class Bot():
 			chrome_options.add_argument("--headless")
 			chrome_options.add_argument('--disable-dev-shm-usage')
 			chrome_options.add_argument('--no-sandbox')
-			chrome_option.add_experimental_option("detach", True")
+			chrome_option.add_experimental_option("detach", True)
 			self.driver = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"), options=chrome_options)
 			driver = self.driver
 			error_count = 0
