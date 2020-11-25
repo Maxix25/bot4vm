@@ -85,8 +85,9 @@ class Bot():
 
 		def mission_abort(self):
 			sys.exit(0)
-	except:
-		driver.quit()
+	except Exception as e:
+		print(f"ERROR: {e}")
+		
 
 
 bot = Bot(os.environ.get('EMAIL'), os.environ.get('PASSWORD'))
