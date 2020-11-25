@@ -44,9 +44,9 @@ class Bot():
 			#signin_btn = driver.find_element_by_xpath("//*[text()='Sign In']")}
 			signin_btn = driver.find_element_by_tag_name("span")
 			signin_btn.click()
-			time.sleep(5)
+			email_field = WebDriverWait(driver, 10).until(EC.visibility_of_element_located((By.NAME, "email")))
 
-			email_field = driver.find_element_by_name("email")
+			#email_field = driver.find_element_by_name("email")
 			email_field.send_keys(email, Keys.TAB, password, Keys.RETURN)
 			time.sleep(5)
 			log("Bot logged in successfully!")
