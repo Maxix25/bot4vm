@@ -79,12 +79,8 @@ class Bot():
 	def type_cmd(self, command):
 		driver = self.driver
 		#terminal = driver.find_element_by_xpath('/html/body/div[3]/div[3]/div[3]/div[1]/div[2]/div')
-		while True:
-			try:
-				terminal = driver.find_element_by_xpath('//*[@id="terminal"]')
-				break
-			except Exception:
-				continue
+		time.sleep(40)
+		terminal = driver.find_element_by_xpath('//*[@id="terminal"]')
 		terminal.send_keys(command, Keys.RETURN)
 
 	def mission_abort(self):
