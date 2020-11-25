@@ -39,7 +39,7 @@ class Bot():
 			log("Logging in...")
 
 			#signin_btn = driver.find_element_by_xpath("//*[text()='Sign In']")}
-			signin_btn = driver.find_element(By.tagName("span"))
+			signin_btn = driver.find_element_by_xpath("//span[1]")
 			signin_btn.click()
 			time.sleep(5)
 
