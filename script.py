@@ -82,7 +82,7 @@ class Bot():
 	def type_cmd(self, command):
 		driver = self.driver
 		#terminal = driver.find_element_by_xpath('/html/body/div[3]/div[3]/div[3]/div[1]/div[2]/div')
-		terminal = WebDriverWait(driver, 10).until(EC.presence_of_element_located((By.XPATH, '//*[@id="terminal"]')))
+		terminal = WebDriverWait(driver, 10).until(EC.visibility_of_element_located((By.XPATH, '//*[@id="terminal"]')))
 		terminal.send_keys(command, Keys.RETURN)
 
 	def mission_abort(self):
