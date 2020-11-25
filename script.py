@@ -79,7 +79,7 @@ class Bot():
 	def type_cmd(self, command):
 		driver = self.driver
 		#terminal = driver.find_element_by_xpath('/html/body/div[3]/div[3]/div[3]/div[1]/div[2]/div')
-		terminal = driver.find_element_by_class_name("terminal xterm xterm-theme-default xterm-cursor-blink")
+		terminal = driver.find_element_by_id("terminal")
 		terminal.send_keys(command, Keys.RETURN)
 
 	def mission_abort(self):
