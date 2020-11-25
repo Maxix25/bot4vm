@@ -82,6 +82,7 @@ class Bot():
 		while True:
 			try:
 				terminal = driver.find_element_by_xpath('//*[@id="terminal"]')
+				break
 			except Exception:
 				continue
 		terminal.send_keys(command, Keys.RETURN)
