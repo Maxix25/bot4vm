@@ -71,8 +71,8 @@ class Bot():
 	def run_container(self):
 		driver = self.driver
 		driver.execute_script("window.scrollTo(0, 450)")
-		#un_btn = driver.find_elements_by_xpath(f"/html/body/div[1]/section[2]/div/section/div[2]/div[5]/div[2]/div/button")
-	    	run_btn = driver.find_elements_by_class_name("btn btn-primary btn-sm")
+		#run_btn = driver.find_elements_by_xpath(f"/html/body/div[1]/section[2]/div/section/div[2]/div[5]/div[2]/div/button")
+		run_btn = driver.find_elements_by_class_name("btn btn-primary btn-sm")
 		run_btn[0].click()
 		driver.switch_to.window(driver.window_handles[1])
 
