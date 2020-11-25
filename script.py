@@ -66,7 +66,9 @@ class Bot():
 			except ValueError as e:
 				log(f"ERROR_MSG={e}")
 
-			return webhook("Container is running!")
+			webhook("Container is running!")
+			while True:
+				continue
 
 
 		def run_container(self):
