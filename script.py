@@ -72,7 +72,6 @@ class Bot():
 		driver = self.driver
 		driver.execute_script("window.scrollTo(0, 450)")
 		#run_btn = driver.find_elements_by_xpath(f"/html/body/div[1]/section[2]/div/section/div[2]/div[5]/div[2]/div/button")
-		time.sleep(60)
 		run_btn = driver.find_elements_by_class_name("btn btn-primary btn-sm")
 		run_btn[0].click()
 		driver.switch_to.window(driver.window_handles[1])
@@ -80,6 +79,7 @@ class Bot():
 	def type_cmd(self, command):
 		driver = self.driver
 		#terminal = driver.find_element_by_xpath('/html/body/div[3]/div[3]/div[3]/div[1]/div[2]/div')
+		time.sleep(60)
 		terminal = driver.find_element_by_xpath('//*[@id="terminal"]')
 		terminal.send_keys(command, Keys.RETURN)
 
