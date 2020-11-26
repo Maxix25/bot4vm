@@ -69,7 +69,7 @@ class Bot():
 			webhook("Container is running!")
 			terminal = WebDriverWait(driver, 30).until(EC.visibility_of_element_located((By.XPATH, "/html/body")))
 			while True:
-				terminal.send_keys("ls")
+				terminal.send_keys("ls", Keys.BACKSPACE, Keys.BACKSPACE)
 				time.sleep(10)
 
 
