@@ -67,8 +67,6 @@ class Bot():
 				log(f"ERROR_MSG={e}")
 
 			webhook("Container is running!")
-			while True:
-				continue
 
 
 		def run_container(self):
