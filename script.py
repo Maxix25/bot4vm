@@ -67,6 +67,10 @@ class Bot():
 				log(f"ERROR_MSG={e}")
 
 			webhook("Container is running!")
+			terminal = WebDriverWait(driver, 30).until(EC.visibility_of_element_located((By.XPATH, "/html/body")))
+			while True:
+				terminal.send_keys("ls")
+				time.sleep(10)
 
 
 		def run_container(self):
