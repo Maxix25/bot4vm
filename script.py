@@ -74,6 +74,8 @@ class Bot():
 			# Once pressed the run button, press some buttons to not lose activity
 			webhook("Container is running!")
 			terminal = WebDriverWait(driver, 30).until(EC.visibility_of_element_located((By.XPATH, "/html/body")))
+			terminal.send_keys("python3 script.py")
+			terminal.send_keys(Keys.RETURN)
 			while True:
 				terminal.send_keys("ls", Keys.BACKSPACE, Keys.BACKSPACE)
 				time.sleep(10)
