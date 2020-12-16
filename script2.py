@@ -7,7 +7,7 @@ def webhook(body):
 	response = requests.post(url, data=values)
 	log(f"Webhook response={'false' if response.text else 'true'}")
 
-start_firefox("ide.goorm.io", headless = True)
+start_chrome("ide.goorm.io", headless = True)
 click("Get Started")
 time.sleep(5)
 write(os.environ.get('EMAIL'))
